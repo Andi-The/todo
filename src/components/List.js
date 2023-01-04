@@ -1,6 +1,6 @@
 import ListElement from './ListElement';
-function List({ todos }) {
-	if (todos === null)
+function List({ todos, refetch }) {
+	if (todos === null || todos.length === 0)
 		return (
 			<div className="card w-75 m-1 mx-auto">
 				<div className="card-body">
@@ -8,7 +8,7 @@ function List({ todos }) {
 				</div>
 			</div>
 		);
-	return <div className="">{todos.map((todo) => <ListElement key={todo.todo} todo={todo} />)}</div>;
+	return <div className="">{todos.map((todo) => <ListElement key={todo.todo} todo={todo} refetch={refetch}/>)}</div>;
 }
 
 export default List;

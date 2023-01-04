@@ -2,7 +2,7 @@ import axios from 'axios';
 axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
 
 const axiosClient = axios.create({
-	baseURL: `http://localhost:8080/todos`,
+	baseURL: window._env_.API_URL,
 	withCredentials: false,
 	headers: {
 		Accept: 'application/json',

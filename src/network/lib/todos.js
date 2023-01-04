@@ -13,8 +13,13 @@ export function getToDos() {
 }
 
 export function deleteTodo(todo) {
-    const requestBody = todo;
+    return axiosClient.delete('/', { data: todo });
+}
 
-    return axiosClient.delete('/', { data: 
-        {todo: '1234', priority: 2} });
+export function postTodo(text, priority) {
+    const todo = {
+        "todo": text,
+        "priority": priority
+        }
+    return axiosClient.post('/', todo);
 }
